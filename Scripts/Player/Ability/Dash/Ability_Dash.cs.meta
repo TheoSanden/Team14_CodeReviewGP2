@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 8ad08c8773d1ef4468520f317282f582
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _dashLength: {fileID: 11400000, guid: 80a467a94379772479200f4be347b6b8, type: 2}
+  - _dashCooldown: {fileID: 11400000, guid: 4b5c85647492df6428a0c3bfb11e8a3c, type: 2}
+  - dash: {instanceID: 0}
+  - dashyeah: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

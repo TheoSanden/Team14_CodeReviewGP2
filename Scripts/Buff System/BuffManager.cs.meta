@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 15d370927d568c5438cfc130c2612f49
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - Fire_Dot: {fileID: 11400000, guid: fd49c9988babab348b608f962f4e671b, type: 2}
+  - Storm_Dot: {fileID: 11400000, guid: af99d85ee62615248b5bb288daebd7f7, type: 2}
+  - Radiation_Dot: {fileID: 11400000, guid: c02233a5d281e1840bce1a9814a47398, type: 2}
+  - Radiation_Hot: {fileID: 11400000, guid: f11fe7ee0f220724fa7ca32bc3c55374, type: 2}
+  - Sludge_Speed_buff: {fileID: 11400000, guid: 5d8a9dbeb53bb1d4bb310d258e82f577, type: 2}
+  - Sludge_Speed_debuff: {fileID: 11400000, guid: e96c99b18ead3634fbfc590534f73011, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

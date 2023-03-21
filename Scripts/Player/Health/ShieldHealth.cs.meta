@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: b510b6d0424935f43a66e05ac408a156
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - maxHealth: {fileID: 11400000, guid: b25a7f3151ef75d40b84998d0a59a287, type: 2}
+  - maxShield: {fileID: 11400000, guid: 17623f17bd19ad446855913fb78a7c51, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

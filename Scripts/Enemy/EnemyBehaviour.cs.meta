@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 4afe55ffe9f512441af94490acdb8f3f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - target: {instanceID: 0}
+  - onDeathEvent: {fileID: 11400000, guid: 5d003e2df2a96e142b227d0b22da775f, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 318bebfc2f9e8ca448884c29f04d71e0
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - onInteractionEvent: {fileID: 11400000, guid: 66d6e15d9ca69d645af46ea97d18bfeb, type: 2}
+  - detonationRadius: {fileID: 11400000, guid: 6734085f65d94b64db0235b05ee9c112, type: 2}
+  - detonationDamage: {fileID: 11400000, guid: d8176cafd10528f49bdbbe421f869dd1, type: 2}
+  - detonationChainDelay: {fileID: 11400000, guid: 4c6eb34e4f7b94b47848112b3415f789, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

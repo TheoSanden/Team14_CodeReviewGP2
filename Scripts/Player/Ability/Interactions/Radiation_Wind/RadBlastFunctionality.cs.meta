@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 5402fbc38e45d5e4db5ab87814eb4cb8
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _radBlastDamage: {fileID: 11400000, guid: c145c5546f8b05c4da8a20a48a5e13c5, type: 2}
+  - _radBlastShieldDamage: {fileID: 11400000, guid: 5388fb17a630d1c4b838947acc658df8, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

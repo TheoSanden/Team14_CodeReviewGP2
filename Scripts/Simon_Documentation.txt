@@ -1,0 +1,43 @@
+Documentation
+
+ - EnemyBehaviour
+	Vars
+	 - isInteracting | if locked in animation
+	 - target | target gameobject
+	 - anim | animatorhandler component
+
+	Override Methods
+	 - OnInteractChange | called when isInteracting has changed state
+	 - Spawn | called on OnEnable
+	 - Setup | called on Awake
+
+	 Public Methods
+	 - FindTarget | finds player closest to enemy
+	 - OnUpdate | use instead of the normal update function
+
+
+ - AnimatorHandler
+	Methods
+	 - PlayTargetAnimation | play an animation
+	 - GetIsInteracting | return state of the isInteracting animator parameter
+
+
+ - EnemyMovement
+	Methods
+	 - NavitageToTarget | nagivate towards transform
+	 - StopNavigation | stop current navigaton and stop moving
+	 - ApplyKnockback | add a force in normalized direction * force
+	Vars
+	 - stoppingDistance | stop moving when reached stoppingDistance from target
+	 - movementSpeed | movement speed
+	 - controllableVelocity | when rigidbody velocity is higher than controllableVelocity dont set movement velocity directly. instead lerp to desired velocity
+	Events
+	- atDestination | called when at desired navigated location
+
+
+ - Boss | Ability
+	Override Methods
+	 - Perform | called when ability should start
+	 - IsAvailable | check for if this ability can be used 
+	Override Event
+	 - DonePerforming | should be called when the ability is done performing

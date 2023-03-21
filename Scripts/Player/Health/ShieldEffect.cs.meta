@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: ad11c0599c086fd43aca771a3c5cb951
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - vfxAsset: {fileID: 8926484042661614526, guid: 663e97fcf0aa41d4f8a48322043bb7f5, type: 3}
+  - shieldObject: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

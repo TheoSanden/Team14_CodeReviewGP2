@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 11dd6dd716402034787a74c7a5edf7c7
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _shieldPerSecond: {fileID: 11400000, guid: bfe63143171d81c4fa9445ab59213cec, type: 2}
+  - _healPerSecond: {fileID: 11400000, guid: 9000f20479453e347995bd3548e0ec17, type: 2}
+  - _areaOfEffect: {fileID: 11400000, guid: 711aee2eb8c42f347b4d7114bc99e8ea, type: 2}
+  - _shieldTickRate: {fileID: 11400000, guid: 41e11ecce36614445a30283429386049, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: bc8684bcf0c68b9499be2898f1309c4a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - onInteractionEvent: {fileID: 11400000, guid: 66d6e15d9ca69d645af46ea97d18bfeb, type: 2}
+  - _windPuddle: {fileID: 1341549876014250250, guid: a5c14d2c7a037744baef932ac239f624, type: 3}
+  - _windOrbDamage: {fileID: 11400000, guid: d8bd649ce8450694c882ab0a5c1eb416, type: 2}
+  - _lifeTime: {fileID: 11400000, guid: 4a8ecd74c6edeb449ba1f30280b95fa9, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

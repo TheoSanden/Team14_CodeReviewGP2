@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 0a95bf52231f73e498662edf707befb7
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _radStorm: {fileID: 4566544440054074877, guid: 0af2949c4ae1a27449629b552bca4f27, type: 3}
+  - _force: {fileID: 11400000, guid: af4853bf8fa79e3439c800a1bf61e5b9, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

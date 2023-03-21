@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 52628c93b098aa145876d2248f710bf0
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _fireStormDamage: {fileID: 11400000, guid: e5395991c0cf8a64b84ddd8ea2ffc4b8, type: 2}
+  - _lifeTime: {fileID: 11400000, guid: 289d06165f5d7e64e99799ea51a2c42b, type: 2}
+  - _areaOfEffect: {fileID: 11400000, guid: b63aa567c2b8f0d45bf47be97fc765e7, type: 2}
+  - _damageTickInterval: {fileID: 11400000, guid: 645af5e9e90584747b004d090385187b, type: 2}
+  - _suckForce: {fileID: 11400000, guid: 96866eacb43ea0e4cae44973887935f0, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
