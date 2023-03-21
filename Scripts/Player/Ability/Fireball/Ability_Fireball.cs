@@ -8,25 +8,23 @@ using UnityEngine.Events;
 
 public class Ability_Fireball : ProjectileAbility
 {
-    [SerializeField] private GameObject _fireballRB;
-    [SerializeField] private FloatVariable _maxForce;
-    [SerializeField] private FloatVariable _cooldownDuration;
-    [SerializeField] private FloatVariable _chargeRate;
-    [SerializeField] private float _baseForce = 7.1f;
+    [SerializeField] private GameObject fireballCD;
+    [SerializeField] private FloatVariable maxForce;
+    [SerializeField] private FloatVariable coolDownDuration;
+    [SerializeField] private FloatVariable chargeRate;
+    [SerializeField] private float baseForce = 7.1f;
     [SerializeField] Vector3 spawnPosition;
-    private float _force;
-    bool _chargingUp = false;
-    private Transform _tf;
-
-    [SerializeField] private Transform FireIndicator;
+    private float force;
+    bool chargingUp = false;
+    private Transform tf;
+    [SerializeField] private Transform fireIndicator;
     [SerializeField] private LayerMask indicatorMask;
-    private LineRenderer FireIndicatorLineRenderer;
+    private LineRenderer fireIndicatorLineRenderer;
     [SerializeField][Range(10, 100f)] private int linePoints = 25;
-    [SerializeField][Range(0.01f, 0.25f)] private float TimeBetweenPoints = 0.1f;
+    [SerializeField][Range(0.01f, 0.25f)] private float timeBetweenPoints = 0.1f;
+
     private float fireMass;
-
-    public UnityEvent WasOnCD;
-
+    public UnityEvent wasOnCD;
     #region Audio
     private AudioSource source;
     [SerializeField] private AudioClip projectileClip;
@@ -34,10 +32,10 @@ public class Ability_Fireball : ProjectileAbility
 
     private void Awake()
     {
-        fireMass = _fireballRB.GetComponent<Rigidbody>().mass;
-        _tf = this.GameObject().transform;
-        _force = _baseForce;
-        FireIndicatorLineRenderer = FireIndicator.GetComponent<LineRenderer>();
+        fireMass = fireballCD.GetComponent<Rigidbody>().mass;
+        tf = this.GameObject().transform;
+        force = baseForce;
+        fireIndicatorLineRenderer = fireIndicator.GetComponent<LineRenderer>();
 
         if (!gameObject.TryGetComponent<AudioSource>(out source)) 
         {
@@ -53,10 +51,10 @@ public class Ability_Fireball : ProjectileAbility
 
     private void Update()
     {
-        if (_chargingUp)
+        if (chargingUp)
         {
-            _force += _chargeRate.Value * Time.deltaTime;
-            _force = Mathf.Clamp(_force, _baseForce, _maxForce.Value);
+            force += chargeRate.Value * Time.deltaTime;
+            force = Mathf.Clamp(force, baseForce, maxForce.Value);
             Indicator();
         }
         CooldownTimer();
@@ -66,64 +64,66 @@ public class Ability_Fireball : ProjectileAbility
     {
         if (_onCD)
         {
-            WasOnCD?.Invoke();
+            wasOnCD?.Invoke();
         }
-        if (_fireballRB != null && !_onCD && _chargingUp)
+        if (fireballCD != null && !_onCD && chargingUp)
         {
             source.PlayOneShot(projectileClip);
 
-            FireballFunctionality fireball = Instantiate(_fireballRB, GetSpawnPosition(), _tf.rotation).GetComponent<FireballFunctionality>();
+            FireballFunctionality fireball = Instantiate(fireballCD, GetSpawnPosition(), tf.rotation).GetComponent<FireballFunctionality>();
 
 
-            fireball.GetComponent<Rigidbody>().AddForce((_tf.forward + Vector3.up * 0.5f) * _force, ForceMode.Impulse);
+            fireball.GetComponent<Rigidbody>().AddForce( tf.forward + Vector3.up * 0.5f) * force, ForceMode.Impulse);
 
-            _cdTimer = _cooldownDuration.Value;
+            _cdTimer = coolDownDuration.Value;
             _onCD = true;
 
         }
-        _chargingUp = false;
-        FireIndicator.gameObject.SetActive(false);
-        FireIndicatorLineRenderer.enabled = false;
+        chargingUp = false;
+        fireIndicator.gameObject.SetActive(false);
+        fireIndicatorLineRenderer.enabled = false;
 
     }
 
     public override void UseAbility()
     {
-        if (_onCD || _chargingUp)
+        if (_onCD || chargingUp)
         {
             return; 
         }
 
-        _force = _baseForce;
+        force = baseForce;
 
-        _chargingUp = true;
-        FireIndicator.gameObject.SetActive(true);
-        FireIndicatorLineRenderer.enabled = true;
+        chargingUp = true;
+        fireIndicator.gameObject.SetActive(true);
+        fireIndicatorLineRenderer.enabled = true;
 
-        FireIndicator.position = _tf.position;
+        fireIndicator.position = tf.position;
     }
 
     private void Indicator()
     {
-        FireIndicatorLineRenderer.positionCount = Mathf.CeilToInt(MathF.Ceiling(linePoints / TimeBetweenPoints) + 1);
+        fireIndicatorLineRenderer.positionCount = Mathf.CeilToInt(MathF.Ceiling(linePoints / timeBetweenPoints
+) + 1);
         Vector3 startPosition = GetSpawnPosition();
-        Vector3 startVelocity = _force * (_tf.forward + Vector3.up * 0.5f) / fireMass;
+        Vector3 startVelocity = force *  tf.forward + Vector3.up * 0.5f) / fireMass;
         int i = 0;
-        FireIndicatorLineRenderer.SetPosition(i, startPosition);
-        for (float time = 0; time < linePoints; time += TimeBetweenPoints)
+        fireIndicatorLineRenderer.SetPosition(i, startPosition);
+        for (float time = 0; time < linePoints; time += timeBetweenPoints
+)
         {
             i++;
             Vector3 point = startPosition + time * startVelocity;
             point.y = startPosition.y + startVelocity.y * time + (Physics.gravity.y / 2f * time * time);
-            FireIndicatorLineRenderer.SetPosition(i, point);
+            fireIndicatorLineRenderer.SetPosition(i, point);
 
-            Vector3 lastPosition = FireIndicatorLineRenderer.GetPosition(i - 1);
+            Vector3 lastPosition = fireIndicatorLineRenderer.GetPosition(i - 1);
             if (Physics.Raycast(lastPosition, (point - lastPosition).normalized, out RaycastHit hit, (point - lastPosition).magnitude, indicatorMask))
             {
-                FireIndicatorLineRenderer.SetPosition(i, hit.point);
-                FireIndicatorLineRenderer.positionCount = i + 1;
+                fireIndicatorLineRenderer.SetPosition(i, hit.point);
+                fireIndicatorLineRenderer.positionCount = i + 1;
 
-                FireIndicator.position = FireIndicatorLineRenderer.GetPosition(i);
+                fireIndicator.position = fireIndicatorLineRenderer.GetPosition(i);
 
                 return;
             }
